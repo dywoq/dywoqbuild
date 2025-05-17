@@ -14,6 +14,7 @@ type BuildConfig struct {
 	OutputType         string   `json:"output_type"`
 	OutputName         string   `json:"output_name"`
 	Language           string   `json:"language"`
+	Compiler           string   `json:"compiler"`
 }
 
 // NewBuildConfig creates new instance of BuildConfig.
@@ -28,11 +29,11 @@ func NewBuildConfig(buildConfig BuildConfig) (newInstance *BuildConfig, err erro
 // CheckUp checks properties for their correctness.
 // NewBuildConfig already does it, but if you still
 // created instance that way:
-// 
+//
 // 	config := BuildConfig{...}
-// 
+//
 // You can use CheckUp:
-// 
+//
 // 	err := config.CheckUp()
 // 	if err != nil {
 // 		panic(err)
