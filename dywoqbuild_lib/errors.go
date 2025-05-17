@@ -13,3 +13,6 @@ var ErrNotFoundFiles = errors.New("can't find source, header files; make sure yo
 
 // ErrNotAllowedLanguage is a error meaning the chose language is wrong.
 var ErrNotAllowedLanguage = errors.New("not allowed language, values: C++, C")
+
+// ErrWrongTargetType is a error that user gets when the typed target type by them is wrong.
+var ErrWrongTargetType = errors.New("wrong target type, values: static_library, dynamic_library, executable")

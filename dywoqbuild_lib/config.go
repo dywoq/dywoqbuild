@@ -15,6 +15,7 @@ type BuildConfig struct {
 	OutputName         string   `json:"output_name"`
 	Language           string   `json:"language"`
 	Compiler           string   `json:"compiler"`
+	TargetType               string   `json:"TargetType"`
 }
 
 // NewBuildConfig creates new instance of BuildConfig.

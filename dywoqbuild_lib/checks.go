@@ -44,6 +44,17 @@ func checkForCorrectnessOfLanguage(buildConfig BuildConfig) error {
 	return nil
 }
 
+func checkForCorrectnessOfTargetType(buildConfig BuildConfig) error {
+	sliceOfAllowedTargetTypes := AllowedTargetTypes()
+	for _, allowedTargetType := range sliceOfAllowedTargetTypes {
+		if buildConfig.TargetType != allowedTargetType {
+			return ErrWrongTargetType
+		}
+	}
+
+	return nil
+}
+
 func runAllCheckUps(buildConfig BuildConfig) (err error) {
 	err = checkForCorrectnessOfStandard(buildConfig)
 	if err != nil {
@@ -56,6 +67,11 @@ func runAllCheckUps(buildConfig BuildConfig) (err error) {
 	}
 
 	err = checkForCorrectnessOfLanguage(buildConfig)
+	if err != nil {
+		return
+	}
+
+	err = checkForCorrectnessOfTargetType(buildConfig)
 	if err != nil {
 		return
 	}

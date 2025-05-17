@@ -43,3 +43,12 @@ func AllowedLanguages() []string {
 		"C",
 	}
 }
+
+// AllowedTargetTypes returns a string slice of allowed target types.
+func AllowedTargetTypes() []string {
+	return []string{
+		"static_library",
+		"shared_library",
+		"executable",
+	}
+}
