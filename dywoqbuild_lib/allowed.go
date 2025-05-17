@@ -1,6 +1,6 @@
 package dywoqbuildlib
 
-// AllowedStandards returns a slice of allowed standard.
+// AllowedStandards returns a string slice of allowed standard.
 func AllowedStandards() []string {
 	return []string{
 		"c++98",
@@ -14,7 +14,7 @@ func AllowedStandards() []string {
 	}
 }
 
-// AllowedExtensionFiles returns a slice of allowed extension files.
+// AllowedExtensionFiles returns a string slice of allowed extension files.
 func AllowedFileExtensions() []string {
 	return []string{
 		// Source file extensions
@@ -33,7 +33,7 @@ func AllowedFileExtensions() []string {
 		".h++"}
 }
 
-// AllowedLanguages returns a slice of allowed languages.
+// AllowedLanguages returns a string slice of allowed languages.
 func AllowedLanguages() []string {
 	return []string{
 		"C++",
