@@ -1,5 +1,8 @@
 package dywoqbuildlib
 
+// Allower is an interface that takes generic parameter T with type any.
+type Allower[T any] func() []T
+
 // AllowedStandards returns a string slice of allowed standard.
 func AllowedStandards() []string {
 	return []string{
