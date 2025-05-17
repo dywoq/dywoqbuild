@@ -24,3 +24,19 @@ func NewBuildConfig(buildConfig BuildConfig) (newInstance *BuildConfig, err erro
 	err = runAllCheckUps(buildConfig)
 	return
 }
+
+// CheckUp checks properties for their correctness.
+// NewBuildConfig already does it, but if you still
+// created instance that way:
+// 
+// 	config := BuildConfig{...}
+// 
+// You can use CheckUp:
+// 
+// 	err := config.CheckUp()
+// 	if err != nil {
+// 		panic(err)
+// 	}
+func (bd BuildConfig) CheckUp() error {
+	return runAllCheckUps(bd)
+}
