@@ -13,6 +13,7 @@ type BuildConfig struct {
 	Standard           string   `json:"standard"`
 	OutputType         string   `json:"output_type"`
 	OutputName         string   `json:"output_name"`
+	Language           string   `json:"language"`
 }
 
 // NewBuildConfig creates new instance of BuildConfig.
@@ -23,4 +24,3 @@ func NewBuildConfig(buildConfig BuildConfig) (newInstance *BuildConfig, err erro
 	err = runAllCheckUps(buildConfig)
 	return
 }
-

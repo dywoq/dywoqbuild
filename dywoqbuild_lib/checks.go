@@ -33,6 +33,17 @@ func checkForCorrectnessOfSourceFiles(buildConfig BuildConfig) error {
 	return nil
 }
 
+func checkForCorrectnessOfLanguage(buildConfig BuildConfig) error {
+	sliceOfAllowedLanguages := AllowedLanguages()
+	for _, allowedLanguage := range sliceOfAllowedLanguages {
+		if buildConfig.Language != allowedLanguage {
+			return ErrNotAllowedLanguage
+		}
+	}
+
+	return nil
+}
+
 func runAllCheckUps(buildConfig BuildConfig) (err error) {
 	err = checkForCorrectnessOfStandard(buildConfig)
 	if err != nil {
@@ -40,6 +51,11 @@ func runAllCheckUps(buildConfig BuildConfig) (err error) {
 	}
 
 	err = checkForCorrectnessOfSourceFiles(buildConfig)
+	if err != nil {
+		return
+	}
+
+	err = checkForCorrectnessOfLanguage(buildConfig)
 	if err != nil {
 		return
 	}

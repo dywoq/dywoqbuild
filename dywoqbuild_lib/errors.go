@@ -10,3 +10,6 @@ var ErrWrongSuffix = errors.New("suffix of one source files is not correct, allo
 
 // ErrNotFoundSourceFile is a error that occurs when the files (source and header files) are not found.
 var ErrNotFoundFiles = errors.New("can't find source, header files; make sure you did add them")
+
+// ErrNotAllowedLanguage is a error meaning the chose language is wrong.
+var ErrNotAllowedLanguage = errors.New("not allowed language, values: C++, C")

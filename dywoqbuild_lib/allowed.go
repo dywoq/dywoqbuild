@@ -32,3 +32,11 @@ func AllowedFileExtensions() []string {
 		".hxx",
 		".h++"}
 }
+
+// AllowedLanguages returns a slice of allowed languages.
+func AllowedLanguages() []string {
+	return []string{
+		"C++",
+		"C",
+	}
+}
